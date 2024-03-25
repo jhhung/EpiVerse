@@ -1,0 +1,15 @@
+name: fanc
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - fanc
+  - tqdm
+  - tmux
+  - ipykernel
+  - gseapy
+  - xlrd
+  - openpyxl
+  - matplotlib-venn
+prefix: /home/u9485344/Jasper/miniconda3/envs/fanc

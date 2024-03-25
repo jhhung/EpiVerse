@@ -1,0 +1,114 @@
+seq1_config:
+    InputShape  : [100,5000,4]
+    Kernels     : [5, 5, 5, 5, 2]
+    PoolSizes   : [5, 5, 5, 5, 2]
+    DropoutRate : 0.3
+    NumFilters  : [64, 128, 128, 256, 256]
+seq2_config:
+    InputShape  : [100,5000,4]
+    Kernels     : [5, 5, 5, 5, 2]
+    PoolSizes   : [5, 5, 5, 5, 2]
+    DropoutRate : 0.3
+    NumFilters  : [64, 128, 128, 256, 256]
+avo1_config:
+    InputShape  : [100,200,71]
+    Kernels     : [5, 5, 4, 2, 1]
+    PoolSizes   : [5, 5, 2, 1, 1]
+    DropoutRate : 0.3
+    NumFilters  : [64, 128, 128, 256, 256]
+avo2_config:
+    InputShape  : [100,200,71]
+    Kernels     : [5, 5, 4, 2, 1]
+    PoolSizes   : [5, 5, 2, 1, 1]
+    DropoutRate : 0.3
+    NumFilters  : [64, 128, 128, 256, 256]
+window_config:
+    InputShape  : [400,71]
+    Kernels     : [10,4,4,4,4]
+    PoolSizes   : [2,2,1,1,1]
+    DropoutRate : 0.3
+    NumFilters  : [128,128,192,192,192] # Should be 2 * Bin_filters
+transformer_config:
+    UseHuggingFace      : True
+    model               : Bert    # ALBert
+    BinEmbedLength      : 100
+    WindowEmbedLength   : 100
+    FeatureDim          : 768     # Should be 2 * Bin_filters
+    FFdims              : 768
+    NumberOfHeads       : 16
+    NumberOfBlocks      : 12
+    Activation          : gelu
+regressor_config:
+    RegressDims   : [512,256,256]
+    DropoutRate   : 0.5
+    OutputDim     : 256
+    IFRegressDims : [256,256,256]
+    IFDropoutRate : 0.3
+chromHMM_config: ## Dropout 0.3
+    Bin1Nodes: [256, 256, 256]
+    Bin2Nodes: [256, 256, 256]
+training_config:
+    # Hi-C Data
+    HiCPath           : ../data/3div/
+    FourDNPath        :     
+    HICCUPPath        : ../data/3div_peaks
+    NegativeRatio     : 2.5
+    HiCField          : rescaled_intensity # The Field Name of Hi-C interaction frequency in .csv
+    HiCTransform      : 
+    PeakOversample    : True
+    UseCustomHiC      : False
+    UsePeakDiag       : True
+    CustomHiC         : None
+    EmbedDim          : 512
+    # Avocado
+    AvocadoPath       : ../data/Avocado/
+    # Sequence
+    RefPath           : ../data/reference/hg38.fa
+    # ChromHMM
+    ChromHMMPath      : ../data/ChromHMM/
+    # Side Information
+    WGBSPath          : 
+    UseGeneExpression : False
+    GeneExpressionPath: 
+
+    # HiC Preprocessing
+    MaxCisRegion      : 1000000    # Don't change
+    DistNorm          : None
+    PeakRatio         : [0.05,10,5]
+
+    # Avocado Preprocessing
+    UseRealSignal        : False
+    UseHighQualityTracks : True
+    UseWGBS              : False
+    Normalize            : zscore
+    AvoRearrangement     : False
+    AvoChromHMMOnly      : False
+    # Model Configuration
+    PretrainedWeight     :
+    SeqAvoMerge          : Concatenate # Add, or Concatenate
+    UseResNet            : False
+    MultiBranch          : True
+
+    # Training Configuration
+    Version              : V205_zscore
+    SlidingWindow        : True
+    Shuffle              : True
+    EpochPerChrom        : 50
+    TrainTissue          : [IMR90_MboI]
+    TrainSample          : [J011]
+    ValidTissue          : [IMR90_MboI]
+    ValidSample          : [J011]
+    TrainChromList       : [1,18]
+    ValidChromList       : [19,20]
+    UseDistPercentile    : True   # Use Percentile distance as loss weight
+    Epochs               : 5000
+    BatchSize            : 8
+    LearningRateBase     : 0.00001
+    WarmupLearningRate   : 0.0000001
+    WarmupEpoch          : 30
+    StepsPerEpoch        : 128
+    SaveFreq             : 20
+    Loss                 : L1_L2_Distance_Corr_Loss
+    HuberDelta           : 3.0
+    EarlyStopEpoch       : 2000
+    ChromHMMWeight       : 50

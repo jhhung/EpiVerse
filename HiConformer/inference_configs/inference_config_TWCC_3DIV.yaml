@@ -1,0 +1,35 @@
+general_config:
+  # Inference Tissue
+  tissues           : ["K562_MboI"] #["IMR90_MboI"]
+  sample_names      : ["J599"] #["J011"] 
+  RefSeqPath        : /work/u9485344/wenny/reference/hg38.fa
+  chrom_list        : [3, 3]
+  rootfolder        : "/work/u9485344/jasper/imputation_valIMR90_zscore" # speicial root folder
+inference_config:
+  # HiConformer Inference model config
+  EVAL_CKPT         : /work/u9485344/jasper/pretrains/A100_TrainIMR90_ValIMR90_Zscore_2023_10_26_15_19_23/checkpoints/ckpt-03440.h5
+  #EVAL_CKPT         : /work/u9485344/jasper/pretrains/A100_TrainIMR90_ValIMR90_Conti1920_2023_10_16_21_49_11/checkpoints/ckpt-03500.h5
+  #EVAL_CKPT         : /work/u9485344/jasper/pretrains/A100_TrainGM12878_ValGM12878_Zscore_2023_11_08_17_24_17/checkpoints/ckpt-05000.h5
+  MODEL_CONFIG      : /work/u9485344/jasper/pretrains/A100_TrainGM12878_ValGM12878_Zscore_2023_11_08_17_24_17/Training_config.yaml
+  #EVAL_CKPT          : /work/u9485344/jasper/pretrains/A100_TrainK562_ValK562_Zscore_2023_12_13_14_26_04/checkpoints/ckpt-00840.h5
+  #MODEL_CONFIG       : /work/u9485344/jasper/pretrains/A100_TrainK562_ValK562_Zscore_2023_12_13_14_26_04/Training_config.yaml
+ground_truth_config:
+  # 3DIV ground truth
+  ground_truth_path: /work/u9485344/jasper/3DIV_cooler/cooler
+  ground_truth_type : 3DIV_results
+  mode: 3DIV
+metric_results_config:
+  eval_progs_dir    : /home/u9485344/Jasper/HiConformer/HiConformer_Analyze/evaluation/HiConformer_prediction
+  smooth            : 0    # smooth for intact hic results
+   # 3DIV_results or intact_results
+  render            : 1    # render imgs 
+mirnet_inference_config:
+  # MIRNet Inference model config
+  EVAL_CKPT         : /work/u9485344/jasper/MIRData/checkpoints_2023_10_25_19_22_26-025.h5
+
+
+
+  
+  
+
+    

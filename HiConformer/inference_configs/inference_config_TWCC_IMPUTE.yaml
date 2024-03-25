@@ -1,0 +1,30 @@
+general_config:
+  # Inference Tissue
+  tissues           : ['smooth_muscle_cell', 'spleen', 'stomach', 'thymus']
+  sample_names      : ['J066', 'J339', 'J026', 'J067']
+  RefSeqPath        : /work/u9485344/wenny/reference/hg38.fa
+  chrom_list        : [1, 22]
+  rootfolder        : /work/u9485344/jasper/imputation_valIMR90_zscore # speicial root folder
+inference_config:
+  # HiConformer Inference model config
+  EVAL_CKPT         : /work/u9485344/jasper/pretrains/A100_TrainIMR90_ValIMR90_Zscore_2023_10_26_15_19_23/checkpoints/ckpt-03440.h5
+  MODEL_CONFIG      : /work/u9485344/jasper/pretrains/A100_TrainIMR90_ValIMR90_Zscore_2023_10_26_15_19_23/Training_config.yaml
+ground_truth_config:
+  # Intact ground truth
+  ground_truth_path : None
+  ground_truth_type : None
+  mode: imputation_only
+metric_results_config:
+  eval_progs_dir    : /home/u9485344/Jasper/HiConformer/HiConformer_Analyze/evaluation/HiConformer_prediction
+  smooth            : 0    # smooth for intact hic results
+  render            : 1    # render imgs 
+mirnet_inference_config:
+  # MIRNet Inference model config
+  EVAL_CKPT         : /work/u9485344/jasper/MIRData/checkpoints_2023_10_25_19_22_26-025.h5
+
+
+
+  
+  
+
+    

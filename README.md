@@ -4,7 +4,7 @@ Welcome to the official repository of EpiVerse, an innovative three-stage pipeli
 ![EpiVerse](EpiVerse.png "EpiVerse pipeline")
 
 ## Visualization Browser
-Explore imputed Hi-C data effortlessly with our dedicated [browser](https:/epiverse.jhhlab.tw), designed for 39 tissues. This intuitive tool simplifies data interpretation, enhancing your research experience.
+Explore imputed Hi-C data effortlessly with our dedicated [browser](https://epiverse.jhhlab.tw), designed for 39 tissues. This intuitive tool simplifies data interpretation, enhancing your research experience.
 ## Installation
 EpiVerse comprises three core modules: Avocado, HiConformer, and MIRNet. Due to conda environment conflicts, we recommend installing EpiVerse across three separate conda environments.
 ### Avocado Environment

@@ -4,7 +4,7 @@ Welcome to the official repository of EpiVerse, an innovative three-stage pipeli
 ![EpiVerse](EpiVerse.png "EpiVerse pipeline")
 
 ## Visualization Browser
-Explore imputed Hi-C data effortlessly with our dedicated browser in https:/epiverse.jhhlab.tw, designed for 39 tissues. This intuitive tool simplifies data interpretation, enhancing your research experience.
+Explore imputed Hi-C data effortlessly with our dedicated [browser](https:/epiverse.jhhlab.tw), designed for 39 tissues. This intuitive tool simplifies data interpretation, enhancing your research experience.
 ## Installation
 EpiVerse comprises three core modules: Avocado, HiConformer, and MIRNet. Due to conda environment conflicts, we recommend installing EpiVerse across three separate conda environments.
 ### Avocado Environment
@@ -47,7 +47,7 @@ HiConformer requires DNA sequences, epigenetic signals, Hi-C, and ChromHMM data 
 
 **Note2**: Please `cd` in to the pipelines folder to run each script with `conda activate HiConformer`
 
-1. HiConformer Pretrained Model Weights: Download the pretrained model weights and configuration from Zenodo.
+1. HiConformer Pretrained Model Weights: Download the pretrained model weights and configuration from [Zenodo](https://zenodo.org/records/10889119).
 2. DNA sequence: Retrieve the hg38 reference DNA sequence from UCSC using:
     ```
     python HiConformer_ref_crawler.py
@@ -307,7 +307,7 @@ python HiConformer2MIRNet.py --mode imputation_mode --chrom_S 22 --chrom_E 22 --
 ### Inference
 **Note**: Please `cd` in to the pipelines folder to run each script with `conda activate HiConformer`
 
-Run inference with MIRNet using the [pretrained weights](TODO):
+Run inference with MIRNet using the [pretrained weights](https://zenodo.org/records/10889119):
 ```
 usage: MIRNet_inference.py [-h] [--tissue TISSUE] [--input_dir INPUT_DIR]
                            [--EVAL_CKPT EVAL_CKPT] [--device DEVICE]

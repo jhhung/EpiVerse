@@ -15,9 +15,12 @@ conda activate Avocado
 pip install avocado-epigenome
 ```
 ### HiConformer training and MIRNet training Environment
-For HiConformer and MIRNet, execute this command:
+For HiConformer and MIRNet, execute these commands:
 ```
-conda env create -f environments/HiConformer.yml
+conda create -n HiConformer -c bioconda pyfaidx pyBigWig python=3.7
+conda install -c conda-forge tensorflow=2.3.0 numpy=1.19.5 configparser tqdm pandas matplotlib transformers scipy 
+conda install -c esri tensorflow-addons 
+conda install -c anaconda tqdm yaml scikit-learn
 ```
 ### Data processing environment
 We utilize fanc to convert the file format and process. 

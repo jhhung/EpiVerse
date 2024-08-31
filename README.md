@@ -18,6 +18,7 @@ pip install avocado-epigenome
 For HiConformer and MIRNet, execute these commands:
 ```
 conda create -n HiConformer -c bioconda pyfaidx pyBigWig python=3.7
+conda activate HiConformer
 conda install -c conda-forge tensorflow=2.3.0 numpy=1.19.5 configparser tqdm pandas matplotlib transformers scipy 
 conda install -c esri tensorflow-addons 
 conda install -c anaconda tqdm yaml scikit-learn

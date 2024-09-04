@@ -323,7 +323,7 @@ optional arguments:
 ```
 Example:
 ```
-python MIRNet_inference.py --tissue IMR90_MboI --input_dir ../inference_results/ --EVAL_CKPT /work/u9485344/jasper/MIRData/checkpoints_2023_10_25_19_22_26-025.h5 --device 
+python MIRNet_inference.py --tissue IMR90_MboI --input_dir ../inference_results/ --EVAL_CKPT /work/u9485344/jasper/MIRData/checkpoints_2023_10_25_19_22_26-025.h5 --device 0
 ```
 ### Training MIRNet
 **Note**: Please `cd` in to the pipelines folder to run each script with `conda activate HiConformer`
@@ -358,7 +358,7 @@ optional arguments:
 Example
 To train MIRNet using the IMR90 tissue data:
 ```
-python MIRNet_train.py --train_data_dir /work/u9485344/jasper/MIRData/IMR90 --val_data_dir /work/u9485344/jasper/MIRData/IMR90_val --result_dir ../training_results --device 0
+python MIRNet_train.py --train_data_dir /work/u9485344/jasper/MIRData/IMR90/HiConformer2MIRData --val_data_dir /work/u9485344/jasper/MIRData/IMR90_val/HiConformer2MIRData --result_dir ../training_results --device 0
 ```
 Note: Preparing Training and Validation Data
 You can create the training and validation datasets using the HiConformer2MIRNet.py and HiConformer2mcool.py script in ground_truth_mode:

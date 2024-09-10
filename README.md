@@ -47,7 +47,7 @@ HiConformer requires DNA sequences, epigenetic signals, Hi-C, and ChromHMM data 
 
 **Note2**: Please `cd` in to the pipelines folder to run each script with `conda activate HiConformer`
 
-1. HiConformer Pretrained Model Weights: Download the pretrained model weights and configuration from [Zenodo](https://zenodo.org/records/10889119).
+1. HiConformer Pretrained Model Weights: Download the pretrained model weights and configuration from [Zenodo](https://zenodo.org/records/13741563).
 2. DNA sequence: Retrieve the hg38 reference DNA sequence from UCSC using:
     ```
     python HiConformer_ref_crawler.py

@@ -47,7 +47,7 @@ HiConformer requires DNA sequences, epigenetic signals, Hi-C, and ChromHMM data 
 
 **Note2**: Please `cd` in to the pipelines folder to run each script with `conda activate HiConformer`
 
-1. HiConformer Pretrained Model Weights: Download the pretrained model weights and configuration from [Zenodo](https://zenodo.org/records/13741563).
+1. HiConformer Pretrained Model Weights: Download the pretrained model weights and configuration from [Zenodo](https://zenodo.org/records/13759557).
 2. DNA sequence: Retrieve the hg38 reference DNA sequence from UCSC using:
     ```
     python HiConformer_ref_crawler.py
@@ -307,7 +307,7 @@ python HiConformer2MIRNet.py --mode imputation_mode --chrom_S 22 --chrom_E 22 --
 ### Inference
 **Note**: Please `cd` in to the pipelines folder to run each script with `conda activate HiConformer`
 
-Run inference with MIRNet using the [pretrained weights](https://zenodo.org/records/10889119):
+Run inference with MIRNet using the [pretrained weights](https://zenodo.org/records/13759557):
 ```
 usage: MIRNet_inference.py [-h] [--tissue TISSUE] [--input_dir INPUT_DIR]
                            [--EVAL_CKPT EVAL_CKPT] [--device DEVICE]

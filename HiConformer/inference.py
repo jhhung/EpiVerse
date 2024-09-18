@@ -21,7 +21,6 @@ import yaml
 import gc
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import f1_score
-import seaborn as sns
 import argparse
 # %%
 def set_gpu_status(device):
